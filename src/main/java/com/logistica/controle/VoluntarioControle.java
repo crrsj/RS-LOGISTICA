@@ -36,7 +36,7 @@ public class VoluntarioControle {
     @ApiResponse(responseCode = "201",description = "usuário cadastrado com sucesso",content = {
    		@Content(mediaType = "application.json",schema = @Schema(implementation = ResponseEntity.class))
     })           
-	public ResponseEntity<VoluntarioDto>cadastrarVoluntario(@RequestBody VoluntarioDto voluntario){
+	public ResponseEntity<VoluntarioDto>cadastrarVoluntario(@RequestBody @Valid VoluntarioDto voluntario){
 		var cadastre = voluntarioServico.cadastrarVoluntario(voluntario);
 		var uri =  ServletUriComponentsBuilder.fromCurrentRequest().path("voluntario/{id}")
 		.buildAndExpand(cadastre.getId()).toUri();		

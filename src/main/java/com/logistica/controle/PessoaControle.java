@@ -38,7 +38,7 @@ public class PessoaControle {
 	 @ApiResponse(responseCode = "201",description = " sucesso",content = {
 	    		@Content(mediaType = "application.json",schema = @Schema(implementation = ResponseEntity.class))
 	  })         		
-	public ResponseEntity<PessoaDto>cadastrarPessoa(@RequestBody PessoaDto pessoa){
+	public ResponseEntity<PessoaDto>cadastrarPessoa(@RequestBody @Valid PessoaDto pessoa){
 		var cadastre = pessoaServico.cadastrarPessoa(pessoa);
 		var uri = ServletUriComponentsBuilder.fromCurrentRequest().path("pessoas/{id}")
 		.buildAndExpand(cadastre.getId()).toUri();

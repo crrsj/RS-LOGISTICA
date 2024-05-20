@@ -31,7 +31,7 @@ public class AbrigoControle {
     @ApiResponse(responseCode = "201",description = "usuário cadastrado com sucesso",content = {
    		@Content(mediaType = "application.json",schema = @Schema(implementation = ResponseEntity.class))
     })           
-	public ResponseEntity<AbrigoDto>cadastrarAbrigo(@RequestBody AbrigoDto abrigo){
+	public ResponseEntity<AbrigoDto>cadastrarAbrigo(@RequestBody @Valid AbrigoDto abrigo){
 		var cadastre = abrigoService.cadastrarAbrigo(abrigo);
 		var uri = ServletUriComponentsBuilder.fromCurrentRequest().path("abrigo/{id}")
 		.buildAndExpand(cadastre.getId()).toUri();

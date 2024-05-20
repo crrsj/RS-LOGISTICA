@@ -39,7 +39,7 @@ public class VeiculoControle {
     @ApiResponse(responseCode = "201",description = "usuário cadastrado com sucesso",content = {
    		@Content(mediaType = "application.json",schema = @Schema(implementation = ResponseEntity.class))
     })           
-	public ResponseEntity<VeiculoDto> cadastrarVeiculo(@RequestBody VeiculoDto veiculo){
+	public ResponseEntity<VeiculoDto> cadastrarVeiculo(@RequestBody @Valid VeiculoDto veiculo){
 		var cadastre = veiculoServico.cadastrarVeiculo(veiculo);
 		var uri =  ServletUriComponentsBuilder.fromCurrentRequest().path("veiculo/{id}")
 		.buildAndExpand(cadastre.getId()).toUri();
