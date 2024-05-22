@@ -45,6 +45,7 @@ public class Abrigo implements Serializable{
 		this.cidade = abrigo.getCidade();
 		this.complemento = abrigo.getComplemento();
 		this.cidade = abrigo.getCidade();
+		this.estado  =abrigo.getEstado();
 		this.cep = abrigo.getCep();
 	}
 	

@@ -45,7 +45,7 @@ public class Voluntario implements Serializable{
     private String email;
     private HabVeiculo habVeiculo;
     private HabNautica habNautica;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "voluntario")
     private List<Veiculo> veiculo = new ArrayList<Veiculo>();
 	
