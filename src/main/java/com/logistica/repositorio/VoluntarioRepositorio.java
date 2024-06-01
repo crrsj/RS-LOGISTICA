@@ -9,6 +9,6 @@ import com.logistica.entidade.Voluntario;
 
 public interface VoluntarioRepositorio extends JpaRepository<Voluntario, Long> {
 	@Query(value = "select v from Voluntario v where upper(trim(v.nome)) like %?1% ") 
-	List<Voluntario>findByNome(String upperCase);
+	List<Voluntario>findByNome(String nome);
 
 }

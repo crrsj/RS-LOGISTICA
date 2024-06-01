@@ -87,7 +87,7 @@ public class VoluntarioControle {
 	 @ApiResponse(responseCode = "200",description = " sucesso",content = {
 	    		@Content(mediaType = "application.json",schema = @Schema(implementation = ResponseEntity.class))
 	  })         		
-	public ResponseEntity<List<VoluntariosDto>>buscarVoluntarioPorNome(@RequestParam String nome){
+	public ResponseEntity<List<VoluntariosDto>>buscarVoluntarioPorNome(@RequestParam(name = "nome") String nome){
 		var buscar = voluntarioServico.buscarPorNome(nome).stream().map(VoluntariosDto::new).toList();
 		return ResponseEntity.ok(buscar);
 	}
