@@ -73,7 +73,7 @@ public class VoluntarioControle {
 	}
 	
 	@DeleteMapping("{id}")
-	@Operation(summary = "Rota responsável por deletar um funcionário pelo id")
+	@Operation(summary = "Rota responsável por deletar um voluntario pelo id")
 	@ApiResponse(responseCode = "204",description = " sem conteúdo",content = {
 	    		@Content(mediaType = "application.json",schema = @Schema(implementation = ResponseEntity.class))
 	    })           
